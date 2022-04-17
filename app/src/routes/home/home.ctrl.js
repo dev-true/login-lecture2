@@ -20,9 +20,9 @@ const output = {
 
 //req(리퀘스트) 프론트에서 요청한 데이터들을 담아놓는 곳
 const process = {
-    login : (req, res) => {
+    login : async(req, res) => {
         const user = new User(req.body);
-        return res.json(user.login());
+        return res.json(await user.login());
     },
 
     register : (req, res) => {
